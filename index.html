@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ID Card Generator</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flag-icons@6.7.0/css/flag-icons.min.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>ID Card Generator</h1>
+
+    <label>
+      Theme:
+      <select id="theme">
+        <option value="light">White</option>
+        <option value="dark">Dark</option>
+      </select>
+    </label>
+
+    <br/><br/>
+
+    <label>
+      Country:
+      <select id="country">
+        <option value="CM" data-region="CEMAC">Cameroon</option>
+        <option value="GA" data-region="CEMAC">Gabon</option>
+        <option value="CI" data-region="BCEAO">Cote d'Ivoire</option>
+        <option value="SN" data-region="BCEAO">Senegal</option>
+        <option value="FR" data-region="EU">France</option>
+        <option value="DE" data-region="EU">Germany</option>
+      </select>
+    </label>
+
+    <div class="row"><input type="text" id="surName" placeholder="Surname"/></div>
+    <div class="row"><input type="text" id="givenName" placeholder="Given Names"/></div>
+    <div class="row"><input type="date" id="dob" placeholder="Date of Birth"/></div>
+    <div class="row"><input type="text" id="birthPlace" placeholder="Place of Birth"/></div>
+    <div class="row" id="meee"><label>Sex:<select id="sex"><option>Male</option><option>Female</option></label></div>
+    <div class="row"><input type="number" id="height" placeholder="Height (m)" step="0.01"/></div>
+    <div class="row"><input type="text" id="profession" placeholder="Profession"/></div>
+    <div class="row"><input type="file" id="photoInput" accept="image/*" /></div>
+
+    <button id="generateBtn">Generate ID Card</button>
+
+    <div class="container888">
+      <div id="idCard" class="card light">
+        <div class="info">
+      <div id="flagDisplay"></div>
+      <h2 id="countryName">Country</h2>
+      <p class="id"><strong>ID:</strong> <span id="generatedId">--</span></p>
+      <p id="kuku"><strong>Surname:</strong> <span id="outSurname"></span></p>
+      <p><strong>Given Name:</strong> <span id="outGivenNames"></span></p>
+      <p><strong>Date of Birth:</strong> <span id="outDob"></span></p>
+      <p><strong>Place of Birth:</strong> <span id="outBirthPlace"></span></p>
+      <p><strong>Sex:</strong> <span id="outSex"></span></p>
+      <p><strong>Height:</strong> <span id="outHeight"></span></p>
+      <p><strong>Profession:</strong> <span id="outProfession"></span></p>
+      <img id="photoPreview" src="" alt="photo"/>
+      <div class="watermark">Made by Song Richard</div>
+        </div>
+    </div>
+    <button id="downloadBtn">Download ID Card</button>
+</div>
+
+    
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
