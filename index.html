@@ -9,7 +9,9 @@
 </head>
 <body>
   <div class="container">
-    <h1>ID Card Generator</h1>
+    <div id="header-container">
+      <h1 id="typingHeading"></h1><span id="cursor"></span>
+    </div>
 
     <label>
       Theme:
@@ -33,19 +35,26 @@
       </select>
     </label>
 
-    <div class="row"><input type="text" id="surName" placeholder="Surname"/></div>
+    <div class="container90">
+      <div class="row"><input type="text" id="surName" placeholder="Surname"/></div>
     <div class="row"><input type="text" id="givenName" placeholder="Given Names"/></div>
+    <div class="row" id="meee">Sex:<select id="sex"><option>M</option><option>F</option></div>
     <div class="row"><input type="date" id="dob" placeholder="Date of Birth"/></div>
     <div class="row"><input type="text" id="birthPlace" placeholder="Place of Birth"/></div>
-    <div class="row" id="meee"><label>Sex:<select id="sex"><option>Male</option><option>Female</option></label></div>
     <div class="row"><input type="number" id="height" placeholder="Height (m)" step="0.01"/></div>
     <div class="row"><input type="text" id="profession" placeholder="Profession"/></div>
     <div class="row"><input type="file" id="photoInput" accept="image/*" /></div>
+    </div>
 
     <button id="generateBtn">Generate ID Card</button>
 
     <div class="container888">
       <div id="idCard" class="card light">
+        <div id="verticalText">
+          <span class="blue">NATIONAL</span>
+          <span class="red">ID CARD</span>
+        </div>
+        
         <div class="info">
       <div id="flagDisplay"></div>
       <h2 id="countryName">Country</h2>
@@ -58,7 +67,8 @@
       <p><strong>Height:</strong> <span id="outHeight"></span></p>
       <p><strong>Profession:</strong> <span id="outProfession"></span></p>
       <img id="photoPreview" src="" alt="photo"/>
-      <div class="watermark">Made by Song Richard</div>
+      <div id="barcode"></div>
+      <div class="watermark">© Made by Song Richard</div>
         </div>
     </div>
     <button id="downloadBtn">Download ID Card</button>
@@ -67,7 +77,17 @@
     
   </div>
 
+  <footer>
+    <!-- Your existing content -->
+
+<footer>
+  <p>Developed by <a href="https://github.com/songrichard13" target="_blank">Song Richard, 2025</a></p>
+</footer>
+
+  </footer>
+
   <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jsbarcode@3.11.5/dist/JsBarcode.all.min.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
